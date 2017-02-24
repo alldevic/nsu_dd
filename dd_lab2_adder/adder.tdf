@@ -1,1 +1,18 @@
+SUBDESIGN adder
+(
+	a[8..1], b[8..1]		: INPUT;
+	res[8..1], carry_out	: OUTPUT;
+	check					: OUTPUT;
+)
 
+VARIABLE
+	carring[9..1] 			: NODE;
+	checking[8..1]			: NODE;
+BEGIN
+	carring[1] = GND;
+	FOR i IN 8 TO 1 GENERATE
+		res[i] = (a[i] XOR b[i]) XOR carring[i];
+		carring[i+1] = (carring[i] AND (a[i] OR b[i])) OR (a[i] AND b[i]);
+	END GENERATE;
+	carry_out = carring[9];
+END;
