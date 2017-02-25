@@ -13,11 +13,11 @@ BEGIN
 	b_carring[1] = VCC;
 	ch_carring[1] = GND;
 	FOR i IN 8 TO 1 GENERATE
-		res[i] = (a[i] XOR b[i]) XOR carring[i];
+		res[i] = a[i] XOR b[i] XOR carring[i];
 		carring[i+1] = (carring[i] AND (a[i] OR b[i])) OR (a[i] AND b[i]);
 
-		b_check[i] = (NOT b[i]) xor b_carring[i];
-		b_carring[i+1] = (NOT b[i]) and b_carring[i];
+		b_check[i] = (NOT b[i]) XOR b_carring[i];
+		b_carring[i+1] = (NOT b[i]) AND b_carring[i];
 
 		ch_out[i] = (res[i] XOR b_check[i]) XOR ch_carring[i];
 		ch_carring[i+1] = (ch_carring[i] AND (res[i] OR b_check[i])) OR (res[i] AND b_check[i]);
@@ -29,3 +29,6 @@ BEGIN
 	END GENERATE;
 
 END;
+
+
+
