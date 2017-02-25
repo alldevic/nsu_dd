@@ -6,13 +6,28 @@ SUBDESIGN adder
 )
 
 VARIABLE
-	carring[9..1] 			: NODE;
-	checking[8..1]			: NODE;
+	carring[9..1] 					: NODE;
+	b_carring[9..1], b_check[8..1]	: NODE;
+	ch_carring[9..1], ch_out[8..1]	: NODE;
+	checky[8..1]	:NODE;
 BEGIN
 	carring[1] = GND;
+	b_carring[1] = VCC;
+	ch_carring[1] = GND;
 	FOR i IN 8 TO 1 GENERATE
 		res[i] = (a[i] XOR b[i]) XOR carring[i];
 		carring[i+1] = (carring[i] AND (a[i] OR b[i])) OR (a[i] AND b[i]);
+
+		b_check[i] = (NOT b[i]) xor b_carring[i];
+		b_carring[i+1] = (NOT b[i]) and b_carring[i];
+
+		ch_out[i] = (res[i] XOR b_check[i]) XOR ch_carring[i];
+		ch_carring[i+1] = (ch_carring[i] AND (res[i] OR b_check[i])) OR (res[i] AND b_check[i]);
+
+		checky[i] = ch_out[i] XNOR a[i];
 	END GENERATE;
+	check = checky[1] and checky[2] and checky[3] and checky[4] and checky[5] and checky[6] and checky[7] and checky[8];
 	carry_out = carring[9];
+
+
 END;
