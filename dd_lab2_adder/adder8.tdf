@@ -1,0 +1,19 @@
+INCLUDE "adder1.inc";
+SUBDESIGN adder8
+(
+	a[7..0], b[7..0], carry_in		: INPUT;
+	sum[7..0], sum_in, check_in		: INPUT;
+	c[7..0], carry_out				: OUTPUT;
+	check_out						: OUTPUT;
+)
+VARIABLE
+	add[7..0]						:adder1;
+BEGIN
+	add[0].carry_in = carry_in;
+	add[].a = a[];
+	add[].b = b[];
+	add[7..1].carry_in = add[6..0].carry_out;
+	c[] = add[].c;
+	carry_out = add[7].carry_out;
+	check_out = check_in;
+END;
