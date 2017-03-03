@@ -20,6 +20,6 @@ BEGIN
 	
 	carry_in_sum[7..1] = GND;
 	carry_in_sum[0] = carry_in;
-	pre_sum[] = (gnd, a[]) + (gnd, b[]) + (gnd, carry_in_sum[]);
+	pre_sum[] = (GND, a[]) + (GND, b[]) + (GND, carry_in_sum[]);
 	check_out = ((carry_out, c[]) == pre_sum[]) or save_bit;
 END;
