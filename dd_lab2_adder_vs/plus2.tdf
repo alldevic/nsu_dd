@@ -1,7 +1,8 @@
 SUBDESIGN plus2
 (
 	a[1..0], b[1..0], carry_in		: INPUT;
-	presum[2..0], save_bit			: INPUT;
+	presum[2..0]					: INPUT;
+	save_bit						: INPUT;
 	c[1..0], carry_out				: OUTPUT;
 	check_out						: OUTPUT;
 )
