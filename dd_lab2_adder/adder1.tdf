@@ -1,6 +1,6 @@
 SUBDESIGN adder1
 (
-	a, b, carry_in		: INPUT;
+	a, b, carry_in	: INPUT;
 	c, carry_out	: OUTPUT;
 )
 
