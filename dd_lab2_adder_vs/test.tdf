@@ -1,27 +1,24 @@
 INCLUDE "adder2.inc";
 INCLUDE "plus2.inc";
+
 SUBDESIGN test
 (
 	a[1..0], b[1..0], carry_in		: INPUT;
-	save_bit						: INPUT;
+	save_bit, presum[2..0]			: INPUT;
 	out_add, out_plus				: OUTPUT;
 	sum_add[2..0], sum_plus[2..0]	: OUTPUT;
 )
 VARIABLE
 	add								: adder2;
 	plus							: plus2;
-	tmpc[1..0], tmp[2..0]			: NODE;
 BEGIN
-	(tmpc[1], tmpc[0]) = (GND, carry_in);
-	tmp[] = (GND, a[]) + (GND, b[]) + (GND, tmpc[]);
-	
 	(add.a[], add.b[], add.carry_in) = (a[], b[], carry_in);
-	(add.presum[], add.save_bit) = (tmp[], save_bit);
+	(add.presum[], add.save_bit) = (presum[], save_bit);
 	out_add = add.check_out;
 	sum_add[] = (add.carry_out, add.c[]);
 
 	(plus.a[], plus.b[], plus.carry_in) = (a[], b[], carry_in);
-	(plus.presum[], plus.save_bit) = (tmp[], save_bit);
+	(plus.presum[], plus.save_bit) = (presum[], save_bit);
 	out_plus = plus.check_out;
 	sum_plus[] = (plus.carry_out, plus.c[]);
 END;
