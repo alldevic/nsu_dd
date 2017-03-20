@@ -1,0 +1,11 @@
+SUBDESIGN d_trigger
+(
+	D, C		: INPUT;
+	Q			: OUTPUT;
+)
+BEGIN
+	IF (C == b"0")
+		Q = D;
+	ELSE	
+		
+END;
