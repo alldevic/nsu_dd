@@ -1,4 +1,4 @@
-SUBDESIGN d_trigger
+SUBDESIGN d_latch
 (
 	D, C		: INPUT;
 	Q			: OUTPUT;
