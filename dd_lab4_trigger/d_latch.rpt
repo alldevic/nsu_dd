@@ -1,8 +1,8 @@
-Project Information               d:\nsuworkbook\dd_lab4_trigger\d_trigger.rpt
+Project Information                 d:\nsuworkbook\dd_lab4_trigger\d_latch.rpt
 
 MAX+plus II Compiler Report File
 Version 9.6 3/22/2000
-Compiled: 03/25/2017 01:18:12
+Compiled: 03/25/2017 01:20:50
 
 Copyright (C) 1988-2000 Altera Corporation
 Any megafunction design, and related net list (encrypted or decrypted),
@@ -37,17 +37,16 @@ Untitled
 Chip/                     Input   Output   Bidir         Shareable
 POF       Device          Pins    Pins     Pins     LCs  Expanders  % Utilized
 
-d_trigger
-      EPM7032AELC44-4      2        1        0      2       0           6  %
+d_latch   EPM7032AELC44-4  2        1        0      2       0           6  %
 
 User Pins:                 2        1        0  
 
 
 
-Device-Specific Information:      d:\nsuworkbook\dd_lab4_trigger\d_trigger.rpt
-d_trigger
+Device-Specific Information:        d:\nsuworkbook\dd_lab4_trigger\d_latch.rpt
+d_latch
 
-***** Logic for device 'd_trigger' compiled without errors.
+***** Logic for device 'd_latch' compiled without errors.
 
 
 
@@ -106,8 +105,8 @@ PDn = Power Down pin.
 & = JTAG pin used for I/O. When used as user I/O, JTAG pins must be kept stable before and during configuration.  JTAG pin stability prevents accidental loading of JTAG instructions.
 
 
-Device-Specific Information:      d:\nsuworkbook\dd_lab4_trigger\d_trigger.rpt
-d_trigger
+Device-Specific Information:        d:\nsuworkbook\dd_lab4_trigger\d_latch.rpt
+d_latch
 
 ** RESOURCE USAGE **
 
@@ -142,8 +141,8 @@ Synthesized logic cells:                         1/  32   (  3%)
 
 
 
-Device-Specific Information:      d:\nsuworkbook\dd_lab4_trigger\d_trigger.rpt
-d_trigger
+Device-Specific Information:        d:\nsuworkbook\dd_lab4_trigger\d_latch.rpt
+d_latch
 
 ** INPUTS **
 
@@ -165,8 +164,8 @@ r = Fitter-inserted logic cell
 h = Register powers up high
 
 
-Device-Specific Information:      d:\nsuworkbook\dd_lab4_trigger\d_trigger.rpt
-d_trigger
+Device-Specific Information:        d:\nsuworkbook\dd_lab4_trigger\d_latch.rpt
+d_latch
 
 ** OUTPUTS **
 
@@ -187,8 +186,8 @@ r = Fitter-inserted logic cell
 h = Register powers up high
 
 
-Device-Specific Information:      d:\nsuworkbook\dd_lab4_trigger\d_trigger.rpt
-d_trigger
+Device-Specific Information:        d:\nsuworkbook\dd_lab4_trigger\d_latch.rpt
+d_latch
 
 ** BURIED LOGIC **
 
@@ -209,8 +208,8 @@ r = Fitter-inserted logic cell
 h = Register powers up high
 
 
-Device-Specific Information:      d:\nsuworkbook\dd_lab4_trigger\d_trigger.rpt
-d_trigger
+Device-Specific Information:        d:\nsuworkbook\dd_lab4_trigger\d_latch.rpt
+d_latch
 
 ** LOGIC CELL INTERCONNECTIONS **
 
@@ -234,8 +233,8 @@ Pin
 - = The logic cell or pin is not an input to the logic cell (or LAB).
 
 
-Device-Specific Information:      d:\nsuworkbook\dd_lab4_trigger\d_trigger.rpt
-d_trigger
+Device-Specific Information:        d:\nsuworkbook\dd_lab4_trigger\d_latch.rpt
+d_latch
 
 ** EQUATIONS **
 
@@ -248,7 +247,7 @@ D        : INPUT;
   _EQ001 =  C &  D
          # !C &  _LC018;
 
--- Node name is '~34~1' from file "d_trigger.tdf" line 9, column 4
+-- Node name is '~34~1' from file "d_latch.tdf" line 9, column 4
 -- Equation name is '~34~1', location is LC018, type is buried.
 -- synthesized logic cell 
 _LC018   = LCELL( _EQ002 $  GND);
@@ -264,7 +263,7 @@ _LC018   = LCELL( _EQ002 $  GND);
 
 
 
-Project Information               d:\nsuworkbook\dd_lab4_trigger\d_trigger.rpt
+Project Information                 d:\nsuworkbook\dd_lab4_trigger\d_latch.rpt
 
 ** COMPILATION SETTINGS & TIMES **
 
@@ -353,4 +352,4 @@ Compilation Times
 Memory Allocated
 -----------------
 
-Peak memory allocated during compilation  = 4,112K
+Peak memory allocated during compilation  = 3,805K
