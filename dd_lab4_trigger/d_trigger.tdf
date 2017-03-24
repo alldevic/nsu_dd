@@ -4,8 +4,8 @@ SUBDESIGN d_trigger
 	Q			: OUTPUT;
 )
 VARIABLE
-	Z :NODE;
+	temp 		:NODE;
 BEGIN
-	Q = NOT ((NOT (D AND C)) and Z);
-	Z = NOT ((NOT (NOT D AND C)) AND Q);
+	Q = NOT ((NOT (D AND C)) and temp);
+	temp = NOT ((NOT (NOT D AND C)) AND Q);
 END;
