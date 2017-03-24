@@ -2,7 +2,7 @@ Project Information                    d:\nsuworkbook\dd_lab4_trigger\d_ff.rpt
 
 MAX+plus II Compiler Report File
 Version 9.6 3/22/2000
-Compiled: 03/25/2017 01:49:21
+Compiled: 03/25/2017 03:23:52
 
 Copyright (C) 1988-2000 Altera Corporation
 Any megafunction design, and related net list (encrypted or decrypted),
@@ -37,18 +37,10 @@ Untitled
 Chip/                     Input   Output   Bidir         Shareable
 POF       Device          Pins    Pins     Pins     LCs  Expanders  % Utilized
 
-d_ff      EPM7032AELC44-4  2        1        0      3       1           9  %
+d_ff      EPM7032AELC44-4  2        1        0      3       0           9  %
 
 User Pins:                 2        1        0  
 
-
-
-Project Information                    d:\nsuworkbook\dd_lab4_trigger\d_ff.rpt
-
-** PROJECT COMPILATION MESSAGES **
-
-Warning: Line 8, File d:\nsuworkbook\dd_lab4_trigger\d_ff.tdf:
-   Group MSB will be "dl0", overrides default order of bits or BIT0=LSB in Options Statement
 
 
 Project Information                    d:\nsuworkbook\dd_lab4_trigger\d_ff.rpt
@@ -132,13 +124,13 @@ d_ff
 Logic Array Block     Logic Cells   I/O Pins    Expanders   Interconnect
 
 A:     LC1 - LC16     0/16(  0%)   4/16( 25%)   0/16(  0%)   0/36(  0%) 
-B:    LC17 - LC32     3/16( 18%)   3/16( 18%)   1/16(  6%)   4/36( 11%) 
+B:    LC17 - LC32     3/16( 18%)   3/16( 18%)   0/16(  0%)   4/36( 11%) 
 
 
 Total dedicated input pins used:                 0/4      (  0%)
 Total I/O pins used:                             7/32     ( 21%)
 Total logic cells used:                          3/32     (  9%)
-Total shareable expanders used:                  1/32     (  3%)
+Total shareable expanders used:                  0/32     (  0%)
 Total Turbo logic cells used:                    3/32     (  9%)
 Total shareable expanders not available (n/a):   0/32     (  0%)
 Average fan-in:                                  3.00
@@ -151,9 +143,9 @@ Total bidirectional pins required:               0
 Total reserved pins required                     4
 Total logic cells required:                      3
 Total flipflops required:                        0
-Total product terms required:                   10
+Total product terms required:                    8
 Total logic cells lending parallel expanders:    0
-Total shareable expanders in database:           1
+Total shareable expanders in database:           0
 
 Synthesized logic cells:                         2/  32   (  6%)
 
@@ -190,7 +182,7 @@ d_ff
                                          Shareable
                                          Expanders     Fan-In    Fan-Out
  Pin     LC  LAB  Primitive    Code   Total Shared n/a INP  FBK  OUT  FBK  Name
-  39     19    B     OUTPUT      t         1      0   0    1    2    0    0  q
+  39     19    B     OUTPUT      t         0      0   0    1    2    0    0  q
 
 
 Code:
@@ -264,25 +256,24 @@ d        : INPUT;
 
 -- Node name is 'q' 
 -- Equation name is 'q', location is LC019, type is output.
- q       = LCELL( _EQ001 $  _LC018);
-  _EQ001 = !c &  _LC017 &  _LC018 &  _X001
-         # !c & !_LC017 & !_LC018;
-  _X001  = EXP(!c & !_LC017);
+ q       = LCELL( _EQ001 $  GND);
+  _EQ001 = !c &  _LC018
+         #  c & !_LC017;
 
 -- Node name is '|d_latch:dl0|~33~1' from file "d_latch.tdf" line 9, column 27
 -- Equation name is '_LC017', type is buried 
 -- synthesized logic cell 
 _LC017   = LCELL( _EQ002 $  GND);
-  _EQ002 =  c & !d
-         # !c &  _LC017
+  _EQ002 =  c &  _LC017
+         # !c & !d
          # !d &  _LC017;
 
 -- Node name is '|d_latch:dl1|~34~1' from file "d_latch.tdf" line 9, column 4
 -- Equation name is '_LC018', type is buried 
 -- synthesized logic cell 
 _LC018   = LCELL( _EQ003 $  GND);
-  _EQ003 =  c &  _LC018
-         # !c & !_LC017
+  _EQ003 = !c &  _LC018
+         #  c & !_LC017
          # !_LC017 &  _LC018;
 
 
@@ -371,8 +362,8 @@ Compilation Times
    Compiler Netlist Extractor             00:00:00
    Database Builder                       00:00:00
    Logic Synthesizer                      00:00:00
-   Partitioner                            00:00:01
-   Fitter                                 00:00:00
+   Partitioner                            00:00:00
+   Fitter                                 00:00:01
    Timing SNF Extractor                   00:00:00
    Assembler                              00:00:00
    --------------------------             --------
@@ -382,4 +373,4 @@ Compilation Times
 Memory Allocated
 -----------------
 
-Peak memory allocated during compilation  = 3,965K
+Peak memory allocated during compilation  = 4,605K
