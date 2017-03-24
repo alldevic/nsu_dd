@@ -2,7 +2,7 @@ Project Information               d:\nsuworkbook\dd_lab4_trigger\d_trigger.rpt
 
 MAX+plus II Compiler Report File
 Version 9.6 3/22/2000
-Compiled: 03/18/2017 13:30:18
+Compiled: 03/25/2017 00:42:51
 
 Copyright (C) 1988-2000 Altera Corporation
 Any megafunction design, and related net list (encrypted or decrypted),
@@ -38,7 +38,7 @@ Chip/                     Input   Output   Bidir         Shareable
 POF       Device          Pins    Pins     Pins     LCs  Expanders  % Utilized
 
 d_trigger
-      EPM7032AELC44-4      2        1        0      1       0           3  %
+      EPM7032AELC44-4      2        1        0      2       0           6  %
 
 User Pins:                 2        1        0  
 
@@ -115,30 +115,30 @@ d_trigger
 Logic Array Block     Logic Cells   I/O Pins    Expanders   Interconnect
 
 A:     LC1 - LC16     0/16(  0%)   4/16( 25%)   0/16(  0%)   0/36(  0%) 
-B:    LC17 - LC32     1/16(  6%)   3/16( 18%)   0/16(  0%)   2/36(  5%) 
+B:    LC17 - LC32     2/16( 12%)   3/16( 18%)   0/16(  0%)   3/36(  8%) 
 
 
 Total dedicated input pins used:                 0/4      (  0%)
 Total I/O pins used:                             7/32     ( 21%)
-Total logic cells used:                          1/32     (  3%)
+Total logic cells used:                          2/32     (  6%)
 Total shareable expanders used:                  0/32     (  0%)
-Total Turbo logic cells used:                    1/32     (  3%)
+Total Turbo logic cells used:                    2/32     (  6%)
 Total shareable expanders not available (n/a):   0/32     (  0%)
-Average fan-in:                                  2.00
-Total fan-in:                                     2
+Average fan-in:                                  3.00
+Total fan-in:                                     6
 
 Total input pins required:                       2
 Total fast input logic cells required:           0
 Total output pins required:                      1
 Total bidirectional pins required:               0
 Total reserved pins required                     4
-Total logic cells required:                      1
+Total logic cells required:                      2
 Total flipflops required:                        0
-Total product terms required:                    1
+Total product terms required:                    5
 Total logic cells lending parallel expanders:    0
 Total shareable expanders in database:           0
 
-Synthesized logic cells:                         0/  32   (  0%)
+Synthesized logic cells:                         1/  32   (  3%)
 
 
 
@@ -150,8 +150,8 @@ d_trigger
                                          Shareable
                                          Expanders     Fan-In    Fan-Out
  Pin     LC  LAB  Primitive    Code   Total Shared n/a INP  FBK  OUT  FBK  Name
-   4    (1)  (A)      INPUT                0      0   0    0    0    1    0  C
-   5    (2)  (A)      INPUT                0      0   0    0    0    1    0  D
+   4    (1)  (A)      INPUT                0      0   0    0    0    1    1  C
+   5    (2)  (A)      INPUT                0      0   0    0    0    1    1  D
 
 
 Code:
@@ -173,7 +173,29 @@ d_trigger
                                          Shareable
                                          Expanders     Fan-In    Fan-Out
  Pin     LC  LAB  Primitive    Code   Total Shared n/a INP  FBK  OUT  FBK  Name
-  41     17    B     OUTPUT      t         0      0   0    2    0    0    0  Q
+  41     17    B     OUTPUT      t         0      0   0    2    1    0    0  Q
+
+
+Code:
+
+s = Synthesized pin or logic cell
+t = Turbo logic cell
++ = Synchronous flipflop
+/ = Slow slew-rate output
+! = NOT gate push-back
+r = Fitter-inserted logic cell
+h = Register powers up high
+
+
+Device-Specific Information:      d:\nsuworkbook\dd_lab4_trigger\d_trigger.rpt
+d_trigger
+
+** BURIED LOGIC **
+
+                                         Shareable
+                                         Expanders     Fan-In    Fan-Out
+ Pin     LC  LAB  Primitive    Code   Total Shared n/a INP  FBK  OUT  FBK  Name
+ (40)    18    B      LCELL    s t         0      0   0    2    1    1    1  ~34~1
 
 
 Code:
@@ -194,16 +216,18 @@ d_trigger
 
 Logic Array Block 'B':
 
-           Logic cells placed in LAB 'B'
-        +- LC17 Q
-        | 
-        |   Other LABs fed by signals
-        |   that feed LAB 'B'
-LC      | | A B |     Logic cells that feed LAB 'B':
+             Logic cells placed in LAB 'B'
+        +--- LC17 Q
+        | +- LC18 ~34~1
+        | | 
+        | |   Other LABs fed by signals
+        | |   that feed LAB 'B'
+LC      | | | A B |     Logic cells that feed LAB 'B':
+LC18 -> * * | - * | <-- ~34~1
 
 Pin
-4    -> * | - * | <-- C
-5    -> * | - * | <-- D
+4    -> * * | - * | <-- C
+5    -> * * | - * | <-- D
 
 
 * = The logic cell or pin is an input to the logic cell (or LAB) through the PIA.
@@ -220,8 +244,17 @@ D        : INPUT;
 
 -- Node name is 'Q' 
 -- Equation name is 'Q', location is LC017, type is output.
- Q       = LCELL( _EQ001 $  VCC);
-  _EQ001 =  C &  D;
+ Q       = LCELL( _EQ001 $  GND);
+  _EQ001 =  C &  D
+         # !C &  _LC018;
+
+-- Node name is '~34~1' from file "d_trigger.tdf" line 9, column 4
+-- Equation name is '~34~1', location is LC018, type is buried.
+-- synthesized logic cell 
+_LC018   = LCELL( _EQ002 $  GND);
+  _EQ002 =  C &  D
+         # !C &  _LC018
+         #  D &  _LC018;
 
 
 
@@ -320,4 +353,4 @@ Compilation Times
 Memory Allocated
 -----------------
 
-Peak memory allocated during compilation  = 3,853K
+Peak memory allocated during compilation  = 4,018K

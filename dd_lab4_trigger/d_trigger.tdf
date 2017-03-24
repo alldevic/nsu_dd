@@ -3,9 +3,9 @@ SUBDESIGN d_trigger
 	D, C		: INPUT;
 	Q			: OUTPUT;
 )
+VARIABLE
+	Z :NODE;
 BEGIN
-	IF (C == b"0")
-		Q = D;
-	ELSE	
-		
+	Q = NOT ((NOT (D AND C)) and Z);
+	Z = NOT ((NOT (NOT D AND C)) AND Q);
 END;
