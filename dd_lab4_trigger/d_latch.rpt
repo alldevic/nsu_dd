@@ -2,7 +2,7 @@ Project Information                 d:\nsuworkbook\dd_lab4_trigger\d_latch.rpt
 
 MAX+plus II Compiler Report File
 Version 9.6 3/22/2000
-Compiled: 03/25/2017 01:20:50
+Compiled: 03/25/2017 01:22:53
 
 Copyright (C) 1988-2000 Altera Corporation
 Any megafunction design, and related net list (encrypted or decrypted),
@@ -352,4 +352,4 @@ Compilation Times
 Memory Allocated
 -----------------
 
-Peak memory allocated during compilation  = 3,805K
+Peak memory allocated during compilation  = 4,019K
