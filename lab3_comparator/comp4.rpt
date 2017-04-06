@@ -1,8 +1,8 @@
-Project Information                                       d:\dd_comp\comp4.rpt
+Project Information                        d:\nsu_dd\lab3_comparator\comp4.rpt
 
 MAX+plus II Compiler Report File
 Version 9.6 3/22/2000
-Compiled: 03/18/2017 11:39:21
+Compiled: 04/07/2017 02:32:36
 
 Copyright (C) 1988-2000 Altera Corporation
 Any megafunction design, and related net list (encrypted or decrypted),
@@ -43,7 +43,7 @@ User Pins:                 8        2        0
 
 
 
-Project Information                                       d:\dd_comp\comp4.rpt
+Project Information                        d:\nsu_dd\lab3_comparator\comp4.rpt
 
 ** FILE HIERARCHY **
 
@@ -54,7 +54,7 @@ Project Information                                       d:\dd_comp\comp4.rpt
 |comp2:cmp20|
 
 
-Device-Specific Information:                              d:\dd_comp\comp4.rpt
+Device-Specific Information:               d:\nsu_dd\lab3_comparator\comp4.rpt
 comp4
 
 ***** Logic for device 'comp4' compiled without errors.
@@ -116,7 +116,7 @@ PDn = Power Down pin.
 & = JTAG pin used for I/O. When used as user I/O, JTAG pins must be kept stable before and during configuration.  JTAG pin stability prevents accidental loading of JTAG instructions.
 
 
-Device-Specific Information:                              d:\dd_comp\comp4.rpt
+Device-Specific Information:               d:\nsu_dd\lab3_comparator\comp4.rpt
 comp4
 
 ** RESOURCE USAGE **
@@ -152,7 +152,7 @@ Synthesized logic cells:                         0/  32   (  0%)
 
 
 
-Device-Specific Information:                              d:\dd_comp\comp4.rpt
+Device-Specific Information:               d:\nsu_dd\lab3_comparator\comp4.rpt
 comp4
 
 ** INPUTS **
@@ -181,7 +181,7 @@ r = Fitter-inserted logic cell
 h = Register powers up high
 
 
-Device-Specific Information:                              d:\dd_comp\comp4.rpt
+Device-Specific Information:               d:\nsu_dd\lab3_comparator\comp4.rpt
 comp4
 
 ** OUTPUTS **
@@ -204,7 +204,7 @@ r = Fitter-inserted logic cell
 h = Register powers up high
 
 
-Device-Specific Information:                              d:\dd_comp\comp4.rpt
+Device-Specific Information:               d:\nsu_dd\lab3_comparator\comp4.rpt
 comp4
 
 ** LOGIC CELL INTERCONNECTIONS **
@@ -234,7 +234,7 @@ Pin
 - = The logic cell or pin is not an input to the logic cell (or LAB).
 
 
-Device-Specific Information:                              d:\dd_comp\comp4.rpt
+Device-Specific Information:               d:\nsu_dd\lab3_comparator\comp4.rpt
 comp4
 
 ** EQUATIONS **
@@ -280,7 +280,7 @@ b3       : INPUT;
 
 
 
-Project Information                                       d:\dd_comp\comp4.rpt
+Project Information                        d:\nsu_dd\lab3_comparator\comp4.rpt
 
 ** COMPILATION SETTINGS & TIMES **
 
@@ -361,12 +361,12 @@ Compilation Times
    Partitioner                            00:00:00
    Fitter                                 00:00:00
    Timing SNF Extractor                   00:00:00
-   Assembler                              00:00:01
+   Assembler                              00:00:00
    --------------------------             --------
-   Total Time                             00:00:01
+   Total Time                             00:00:00
 
 
 Memory Allocated
 -----------------
 
-Peak memory allocated during compilation  = 4,095K
+Peak memory allocated during compilation  = 6,419K
