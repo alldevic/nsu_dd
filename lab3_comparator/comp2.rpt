@@ -1,8 +1,8 @@
-Project Information                                       d:\dd_comp\comp2.rpt
+Project Information                        d:\nsu_dd\lab3_comparator\comp2.rpt
 
 MAX+plus II Compiler Report File
 Version 9.6 3/22/2000
-Compiled: 03/18/2017 11:28:58
+Compiled: 04/07/2017 01:48:00
 
 Copyright (C) 1988-2000 Altera Corporation
 Any megafunction design, and related net list (encrypted or decrypted),
@@ -43,7 +43,7 @@ User Pins:                 4        2        0
 
 
 
-Device-Specific Information:                              d:\dd_comp\comp2.rpt
+Device-Specific Information:               d:\nsu_dd\lab3_comparator\comp2.rpt
 comp2
 
 ***** Logic for device 'comp2' compiled without errors.
@@ -105,7 +105,7 @@ PDn = Power Down pin.
 & = JTAG pin used for I/O. When used as user I/O, JTAG pins must be kept stable before and during configuration.  JTAG pin stability prevents accidental loading of JTAG instructions.
 
 
-Device-Specific Information:                              d:\dd_comp\comp2.rpt
+Device-Specific Information:               d:\nsu_dd\lab3_comparator\comp2.rpt
 comp2
 
 ** RESOURCE USAGE **
@@ -141,7 +141,7 @@ Synthesized logic cells:                         0/  32   (  0%)
 
 
 
-Device-Specific Information:                              d:\dd_comp\comp2.rpt
+Device-Specific Information:               d:\nsu_dd\lab3_comparator\comp2.rpt
 comp2
 
 ** INPUTS **
@@ -166,7 +166,7 @@ r = Fitter-inserted logic cell
 h = Register powers up high
 
 
-Device-Specific Information:                              d:\dd_comp\comp2.rpt
+Device-Specific Information:               d:\nsu_dd\lab3_comparator\comp2.rpt
 comp2
 
 ** OUTPUTS **
@@ -189,7 +189,7 @@ r = Fitter-inserted logic cell
 h = Register powers up high
 
 
-Device-Specific Information:                              d:\dd_comp\comp2.rpt
+Device-Specific Information:               d:\nsu_dd\lab3_comparator\comp2.rpt
 comp2
 
 ** LOGIC CELL INTERCONNECTIONS **
@@ -215,7 +215,7 @@ Pin
 - = The logic cell or pin is not an input to the logic cell (or LAB).
 
 
-Device-Specific Information:                              d:\dd_comp\comp2.rpt
+Device-Specific Information:               d:\nsu_dd\lab3_comparator\comp2.rpt
 comp2
 
 ** EQUATIONS **
@@ -247,7 +247,7 @@ b1       : INPUT;
 
 
 
-Project Information                                       d:\dd_comp\comp2.rpt
+Project Information                        d:\nsu_dd\lab3_comparator\comp2.rpt
 
 ** COMPILATION SETTINGS & TIMES **
 
@@ -336,4 +336,4 @@ Compilation Times
 Memory Allocated
 -----------------
 
-Peak memory allocated during compilation  = 3,915K
+Peak memory allocated during compilation  = 6,863K
