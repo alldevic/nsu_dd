@@ -2,8 +2,7 @@ PARAMETERS (MAX_N = 9);
 CONSTANT WIDTH = CEIL(LOG2(MAX_N));
 SUBDESIGN counter
 (
-	clk				: INPUT;
-	R				: INPUT;
+	clk, R			: INPUT;
 	out[WIDTH..1]	: OUTPUT;
 )
 VARIABLE
