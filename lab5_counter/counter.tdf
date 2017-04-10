@@ -1,17 +1,22 @@
-PARAMETERS (MAX_N = 6);
+PARAMETERS (MAX_N = 13);
 CONSTANT WIDTH = CEIL(LOG2(MAX_N));
 SUBDESIGN counter
 (
-	clk, R			: INPUT;
-	out[WIDTH..0]	: OUTPUT;
+	clk				: INPUT;
+	R				: INPUT = GND;
+	out[WIDTH..1], cout	: OUTPUT;
 )
 VARIABLE
-	ff[WIDTH..0]	: TFF;
+	ff[WIDTH..1]	: DFF;
 BEGIN
-	ff[WIDTH-1..0].t = ff[WIDTH..1].q;
-	ff[WIDTH] = R;
-	ff[].clk = clk;
-	out[WIDTH..0] = ff[0..WIDTH].q;
+	ff[].(CLK, CLRn) = (clk, not R);
+	IF ff[].Q == MAX_N - 1 THEN
+		cout = VCC;
+		ff[] = 0;
+	ELSE
+		ff[].D = ff[].Q + 1;
+	END IF;
+	out[] = ff[].Q;
 END;
 
 

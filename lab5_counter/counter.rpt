@@ -2,7 +2,7 @@ Project Information                         d:\nsu_dd\lab5_counter\counter.rpt
 
 MAX+plus II Compiler Report File
 Version 9.6 3/22/2000
-Compiled: 04/08/2017 02:43:05
+Compiled: 04/10/2017 21:52:47
 
 Copyright (C) 1988-2000 Altera Corporation
 Any megafunction design, and related net list (encrypted or decrypted),
@@ -37,9 +37,9 @@ Untitled
 Chip/                     Input   Output   Bidir         Shareable
 POF       Device          Pins    Pins     Pins     LCs  Expanders  % Utilized
 
-counter   EPM7032AELC44-4  2        4        0      4       0           12 %
+counter   EPM7032AELC44-4  2        5        0      5       0           15 %
 
-User Pins:                 2        4        0  
+User Pins:                 2        5        0  
 
 
 
@@ -74,13 +74,13 @@ Device Options:
             G  G     C                 o  o  
             N  N     I  G  G  G  c  G  u  u  
             D  D     N  N  N  N  l  N  t  t  
-            *  *  R  T  D  D  D  k  D  2  1  
+            *  *  R  T  D  D  D  k  D  2  4  
           -----------------------------------_ 
         /   6  5  4  3  2  1 44 43 42 41 40   | 
-  #TDI |  7                                39 | out0 
+  #TDI |  7                                39 | out1 
   GND* |  8                                38 | #TDO 
   GND* |  9                                37 | out3 
-   GND | 10                                36 | GND* 
+   GND | 10                                36 | cout 
   GND* | 11                                35 | VCCIO 
   GND* | 12        EPM7032AELC44-4         34 | GND* 
   #TMS | 13                                33 | GND* 
@@ -123,26 +123,26 @@ counter
 Logic Array Block     Logic Cells   I/O Pins    Expanders   Interconnect
 
 A:     LC1 - LC16     0/16(  0%)   3/16( 18%)   0/16(  0%)   0/36(  0%) 
-B:    LC17 - LC32     4/16( 25%)   6/16( 37%)   0/16(  0%)   4/36( 11%) 
+B:    LC17 - LC32     5/16( 31%)   7/16( 43%)   0/16(  0%)   5/36( 13%) 
 
 
 Total dedicated input pins used:                 1/4      ( 25%)
-Total I/O pins used:                             9/32     ( 28%)
-Total logic cells used:                          4/32     ( 12%)
+Total I/O pins used:                            10/32     ( 31%)
+Total logic cells used:                          5/32     ( 15%)
 Total shareable expanders used:                  0/32     (  0%)
-Total Turbo logic cells used:                    4/32     ( 12%)
+Total Turbo logic cells used:                    5/32     ( 15%)
 Total shareable expanders not available (n/a):   0/32     (  0%)
-Average fan-in:                                  3.00
-Total fan-in:                                    12
+Average fan-in:                                  5.20
+Total fan-in:                                    26
 
 Total input pins required:                       2
 Total fast input logic cells required:           0
-Total output pins required:                      4
+Total output pins required:                      5
 Total bidirectional pins required:               0
 Total reserved pins required                     4
-Total logic cells required:                      4
+Total logic cells required:                      5
 Total flipflops required:                        4
-Total product terms required:                    4
+Total product terms required:                   11
 Total logic cells lending parallel expanders:    0
 Total shareable expanders in database:           0
 
@@ -159,7 +159,7 @@ counter
                                          Expanders     Fan-In    Fan-Out
  Pin     LC  LAB  Primitive    Code   Total Shared n/a INP  FBK  OUT  FBK  Name
   43      -   -       INPUT  G             0      0   0    0    0    0    0  clk
-   4    (1)  (A)      INPUT                0      0   0    0    0    1    0  R
+   4    (1)  (A)      INPUT                0      0   0    0    0    4    0  R
 
 
 Code:
@@ -186,10 +186,11 @@ counter
                                          Shareable
                                          Expanders     Fan-In    Fan-Out
  Pin     LC  LAB  Primitive    Code   Total Shared n/a INP  FBK  OUT  FBK  Name
-  39     19    B         FF   +  t         0      0   0    1    0    1    0  out0
-  40     18    B         FF   +  t         0      0   0    0    1    1    0  out1
-  41     17    B         FF   +  t         0      0   0    0    1    1    0  out2
-  37     21    B         FF   +  t         0      0   0    0    1    0    0  out3
+  36     22    B     OUTPUT      t         0      0   0    0    4    0    0  cout
+  39     19    B         FF   +  t         0      0   0    1    4    5    0  out1
+  41     17    B         FF   +  t         0      0   0    1    1    4    0  out2
+  37     21    B         FF   +  t         0      0   0    1    4    4    0  out3
+  40     18    B         FF   +  t         0      0   0    1    4    4    0  out4
 
 
 Code:
@@ -210,22 +211,24 @@ counter
 
 Logic Array Block 'B':
 
-                 Logic cells placed in LAB 'B'
-        +------- LC19 out0
-        | +----- LC18 out1
-        | | +--- LC17 out2
-        | | | +- LC21 out3
-        | | | | 
-        | | | |   Other LABs fed by signals
-        | | | |   that feed LAB 'B'
-LC      | | | | | A B |     Logic cells that feed LAB 'B':
-LC19 -> * * - - | - * | <-- out0
-LC18 -> - * * - | - * | <-- out1
-LC17 -> - - * * | - * | <-- out2
+                   Logic cells placed in LAB 'B'
+        +--------- LC22 cout
+        | +------- LC19 out1
+        | | +----- LC17 out2
+        | | | +--- LC21 out3
+        | | | | +- LC18 out4
+        | | | | | 
+        | | | | |   Other LABs fed by signals
+        | | | | |   that feed LAB 'B'
+LC      | | | | | | A B |     Logic cells that feed LAB 'B':
+LC19 -> * * * * * | - * | <-- out1
+LC17 -> * * * * * | - * | <-- out2
+LC21 -> * * - * * | - * | <-- out3
+LC18 -> * * - * * | - * | <-- out4
 
 Pin
-43   -> - - - - | - - | <-- clk
-4    -> * - - - | - * | <-- R
+43   -> - - - - - | - - | <-- clk
+4    -> - * * * * | - * | <-- R
 
 
 * = The logic cell or pin is an input to the logic cell (or LAB) through the PIA.
@@ -240,21 +243,31 @@ counter
 clk      : INPUT;
 R        : INPUT;
 
--- Node name is 'out0' = 'ff3' from file "counter.tdf" line 9, column 4
--- Equation name is 'out0', location is LC019, type is output.
- out0    = TFFE( R, GLOBAL( clk),  VCC,  VCC,  VCC);
+-- Node name is 'cout' 
+-- Equation name is 'cout', location is LC022, type is output.
+ cout    = LCELL( _EQ001 $  GND);
+  _EQ001 = !out1 & !out2 &  out3 &  out4;
 
--- Node name is 'out1' = 'ff2' from file "counter.tdf" line 9, column 4
--- Equation name is 'out1', location is LC018, type is output.
- out1    = TFFE( out0, GLOBAL( clk),  VCC,  VCC,  VCC);
+-- Node name is 'out1' = 'ff1' from file "counter.tdf" line 10, column 4
+-- Equation name is 'out1', location is LC019, type is output.
+ out1    = TFFE(!_EQ002, GLOBAL( clk), !R,  VCC,  VCC);
+  _EQ002 = !out1 & !out2 &  out3 &  out4;
 
--- Node name is 'out2' = 'ff1' from file "counter.tdf" line 9, column 4
+-- Node name is 'out2' = 'ff2' from file "counter.tdf" line 10, column 4
 -- Equation name is 'out2', location is LC017, type is output.
- out2    = TFFE( out1, GLOBAL( clk),  VCC,  VCC,  VCC);
+ out2    = TFFE( out1, GLOBAL( clk), !R,  VCC,  VCC);
 
--- Node name is 'out3' = 'ff0' from file "counter.tdf" line 9, column 4
+-- Node name is 'out3' = 'ff3' from file "counter.tdf" line 10, column 4
 -- Equation name is 'out3', location is LC021, type is output.
- out3    = TFFE( out2, GLOBAL( clk),  VCC,  VCC,  VCC);
+ out3    = TFFE( _EQ003, GLOBAL( clk), !R,  VCC,  VCC);
+  _EQ003 = !out1 & !out2 &  out3 &  out4
+         #  out1 &  out2;
+
+-- Node name is 'out4' = 'ff4' from file "counter.tdf" line 10, column 4
+-- Equation name is 'out4', location is LC018, type is output.
+ out4    = TFFE( _EQ004, GLOBAL( clk), !R,  VCC,  VCC);
+  _EQ004 = !out1 & !out2 &  out3 &  out4
+         #  out1 &  out2 &  out3;
 
 
 
@@ -353,4 +366,4 @@ Compilation Times
 Memory Allocated
 -----------------
 
-Peak memory allocated during compilation  = 4,208K
+Peak memory allocated during compilation  = 3,900K
