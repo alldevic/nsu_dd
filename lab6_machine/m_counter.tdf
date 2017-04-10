@@ -1,0 +1,26 @@
+PARAMETERS (MAX_N = 4);
+CONSTANT WIDTH = CEIL(LOG2(MAX_N));
+SUBDESIGN m_counter
+(
+	clk, 	R		: INPUT;
+	out[WIDTH..1]	: OUTPUT;
+)
+VARIABLE
+	sm				: MACHINE 
+						OF BITS (out[WIDTH..1]) 
+						WITH STATES(st0 = 0,st1 = 1,st2 = 2,st3 = 3);
+BEGIN
+	sm.clk = clk;
+	sm.reset = R;
+	TABLE
+		sm, R => sm;
+		st0, 0 => st1;
+		st0, 1 => st0;
+		st1, 0 => st2;
+		st1, 1 => st0;
+		st2, 0 => st3;
+		st2, 1 => st0;
+		st3, 0 => st0;
+		st3, 1 => st0;
+	END TABLE;
+END;
